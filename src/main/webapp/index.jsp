@@ -5,7 +5,7 @@
     <title>Projet Programation par Composant</title>
 </head>
 <body>
-<h1>Bienvenue sur le projet d'Adrien TOURNEL & Jean Barbet
+<h1>Bienvenue sur le projet d'Alexandre TOURNEL & Jean Barbet
 </h1>
 <br/>
 <p>blablabla notre projet est blabla rapel des consignes blabla bla bonne correction</p>
