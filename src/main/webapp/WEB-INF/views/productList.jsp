@@ -2,44 +2,45 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.shop.model.Product" %>
 
-<html>
+<html lang="fr">
 <head>
     <title>Liste des Produits</title>
     <link rel="stylesheet" type="text/css" href="css/productList.css">
 </head>
-<body>
-<h2>Liste des Produits</h2>
-<%
-    List<Product> products = (List<Product>) request.getAttribute("products");
-%>
-<table>
+  
+<body class="container">
+    <h2>Liste des Produits</h2>
     <%
-        for (Product product : products)
-        {
+        List<Product> products = (List<Product>) request.getAttribute("products");
     %>
-    <tr>
-        <td>
-            <%= product.getId() %>
-        </td>
-        <td>
-            <%= product.getName() %>
-        </td>
-        <td>
-            <%= product.getDescription() %>
-        </td>
-        <td>
-            <%= product.getPrice() %>
-        </td>
-        <td>
-            <a href="ProductEditServlet?id=<%=product.getId() %>">Edit</a>
-            <a href="ProductDeleteServlet?id=<%=product.getId() %>">Delete</a>
-        </td>
-    </tr>
+    <table>
+        <%
+            for (Product product : products)
+            {
+        %>
+        <tr>
+            <td>
+                <%= product.getId() %>
+            </td>
+            <td>
+                <%= product.getName() %>
+            </td>
+            <td>
+                <%= product.getDescription() %>
+            </td>
+            <td>
+                <%= product.getPrice() %>
+            </td>
+            <td>
+                <a class="edit-link" href="ProductEditServlet?id=<%=product.getId() %>">Edit</a>
+                <a class="delete-link" href="ProductDeleteServlet?id=<%=product.getId() %>">Delete</a>
+            </td>
+        </tr>
 
-    <%
-        }
-    %>
-</table>
-<a href="ProductAddServlet">Add Product</a>
+        <%
+            }
+        %>
+    </table>
+    <a class="add-link" href="ProductAddServlet">Add Product</a>
 </body>
 </html>
