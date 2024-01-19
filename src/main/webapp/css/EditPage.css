@@ -15,7 +15,7 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     padding: 30px;
     width: 400px;
-    margin: auto; /* Ajout pour centrer le container */
+    margin: auto;
 }
 
 h2 {

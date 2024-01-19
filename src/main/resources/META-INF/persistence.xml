@@ -8,6 +8,8 @@
         <jta-data-source>java:/jdbc/MyDataSource</jta-data-source>
         <properties>
             <property name="jakarta.persistence.schema-generation.database.action" value= "update" />
+            <property name="hibernate.connection.characterEncoding" value="UTF-8" />
+            <property name="hibernate.connection.useUnicode" value="true" />
         </properties>
     </persistence-unit>
 </persistence>

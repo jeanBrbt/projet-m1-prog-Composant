@@ -23,9 +23,11 @@ public class ProductAddServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");//pour les accents
         String name = request.getParameter("productName");
         String description = request.getParameter("productDescription");
         double price = Double.parseDouble(request.getParameter("productPrice"));
+        System.out.println(name);
 
         Product product = new Product();
         product.setName(name);
