@@ -134,3 +134,10 @@ a.delete-link {
 a.delete-link:hover {
     background-color: #bd2130; /* Rouge plus foncé */
 }
+
+.search-container {
+    margin-top: 20px;
+    margin-left: 80%;
+}
+
+
