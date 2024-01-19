@@ -9,7 +9,16 @@
 </head>
   
 <body>
+  
+  
     <div class="container">
+      <div class="search-container">
+        <form>
+            
+            <input type="text" id="searchInput" name="searchInput" placeholder="Entrez votre recherche...">
+            <button type="submit">Rechercher</button>
+        </form>
+    </div>
         <h2>Liste des Produits</h2>
         <%
             List<Product> products = (List<Product>) request.getAttribute("products");
