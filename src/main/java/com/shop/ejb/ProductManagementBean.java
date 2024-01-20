@@ -23,6 +23,13 @@ public class ProductManagementBean {
         return entityManager.createQuery("SELECT p FROM Product p", Product.class).getResultList();
     }
 
+    public List<Product> getProductsByName(String name) {
+        return entityManager.createQuery("SELECT p FROM Product p WHERE p.name LIKE :name", Product.class)
+                .setParameter("name", "%" + name + "%")
+                .getResultList();
+    }
+
+
     public void updateProduct(Product product) {
         entityManager.merge(product);
     }

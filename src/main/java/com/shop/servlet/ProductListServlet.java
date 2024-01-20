@@ -20,13 +20,26 @@ public class ProductListServlet extends HttpServlet {
     private ProductManagementBean productManagementBean;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+        /*    throws ServletException, IOException {
         List<Product> products = productManagementBean.getAllProducts();
-        for (Product product : products) {
-            System.out.println("test");
-            System.out.println(product.getName());
+        request.setAttribute("products", products);
+        request.getRequestDispatcher("/WEB-INF/views/productList.jsp").forward(request, response);
+
+         */
+            throws ServletException, IOException {
+        // Récupérer le paramètre "searchInput" de l'URL
+        String searchInput = request.getParameter("searchInput");
+
+        List<Product> products;
+
+        if (searchInput != null && !searchInput.isEmpty()) {
+            // Si le paramètre "searchInput" n'est pas vide, effectuez une recherche par nom
+            products = productManagementBean.getProductsByName(searchInput);
+        } else {
+            // Sinon, affichez la liste complète des produits
+            products = productManagementBean.getAllProducts();
         }
-        //  System.out.println(products);
+
         request.setAttribute("products", products);
         request.getRequestDispatcher("/WEB-INF/views/productList.jsp").forward(request, response);
     }
