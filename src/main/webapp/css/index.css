@@ -29,6 +29,9 @@ p {
     margin-bottom: 20px; /* Ajout d'une marge en bas pour l'espace */
 }
 
+.consignes{
+    text-align: left;
+}
 a {
     display: inline-block;
     padding: 8px 16px;
@@ -47,7 +50,9 @@ a:hover {
 a.add-link {
     background-color: #0056b3; /* Bleu foncé */
 }
-
+a.github-link{
+    background-color: darkgray;
+}
 a.add-link:hover {
     background-color: #003366; /* Bleu foncé plus foncé */
 }
