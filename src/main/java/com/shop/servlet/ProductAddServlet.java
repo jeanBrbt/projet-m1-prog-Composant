@@ -15,19 +15,18 @@ public class ProductAddServlet extends HttpServlet {
 
     @EJB
     private ProductManagementBean productManagementBean;
-
+    // Afficher le formulaire d'ajout
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/views/productAdd.jsp").forward(request, response);
     }
-
+    // mettre a jour le produit
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");//pour les accents
+        request.setCharacterEncoding("UTF-8");//sinon les accents sont remplacés par des autres charactéres
         String name = request.getParameter("productName");
         String description = request.getParameter("productDescription");
         double price = Double.parseDouble(request.getParameter("productPrice"));
-        System.out.println(name);
 
         Product product = new Product();
         product.setName(name);

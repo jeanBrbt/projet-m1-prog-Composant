@@ -17,7 +17,7 @@ public class ProductEditServlet extends HttpServlet {
 
     @EJB
     private ProductManagementBean productManagementBean;
-
+    //afficher formulaire d'édition
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         long productId = Long.parseLong(request.getParameter("id"));
@@ -26,9 +26,10 @@ public class ProductEditServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/views/productEdit.jsp").forward(request, response);
     }
 
+    //enregistrer le nouveau produit
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");//pour les accents
+        request.setCharacterEncoding("UTF-8");//sinon les accents sont remplacés par des autres charactéres
         long productId = Long.parseLong(request.getParameter("productId"));
         String name = request.getParameter("productName");
         String description = request.getParameter("productDescription");
